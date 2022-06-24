@@ -1,0 +1,31 @@
+#This Program is for Julie to keep track of which items are being used and by who
+#Created by Caden Govender
+
+#Import tkinter so we can make a GUI
+from tkinter import *
+
+#Create the buttons and labels
+def setup_buttons():
+
+    #All the labels, buttons and entry boxes
+    Label(main_window, text="Customer Full Name") .grid(column=0, row=0)
+    Label(main_window, text="Receipt Number") .grid(column=0, row=1)
+    Label(main_window, text="Items Hired") .grid(column=0, row=2)
+    Label(main_window, text="Number of Items Hired") .grid(column=0, row=3)
+    Label(main_window, text="Row #") .grid(column=0, row=5, pady=20)
+    Label(main_window, text="               ") .grid(column=2, row=0)
+
+#Start the program 
+def main():
+    
+    #The global variables that are used
+    global main_window
+    
+    #Create the gui and start it
+    main_window = Tk()
+    
+    #Title for the main window
+    main_window.title("Julie's Party Hire")
+    setup_buttons()
+    main_window.mainloop()
+main()
