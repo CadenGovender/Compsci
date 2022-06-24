@@ -1,0 +1,50 @@
+#This Program is for Julie to keep track of which items are being used and by who
+#Created by Caden Govender
+#Import tkinter so we can make a GUI
+from tkinter import *
+#Create the buttons and labels
+def setup_buttons():
+    #All the labels, buttons and entry boxes
+    Label(main_window, text="Customer Full Name") .grid(column=0, row=0)
+    Label(main_window, text="Receipt Number") .grid(column=0, row=1)
+    Label(main_window, text="Items Hired") .grid(column=0, row=2)
+    Label(main_window, text="Number of Items Hired") .grid(column=0, row=3)
+    Label(main_window, text="Row #") .grid(column=0, row=5, pady=20)
+    Label(main_window, text="               ") .grid(column=2, row=0)
+    Button(main_window, text="Delete Row", command=delete_row, width=10) .grid(column=0, row=6, sticky=N)
+    Button(main_window, text="Quit", command=quit, width=10) .grid(column=4, row=0, sticky=E)
+    Button(main_window, text="Append Details", command=check_inputs) .grid(column=3, row=6)
+    Button(main_window, text="Print Details", command=print_receipt_details, width=10) .grid(column=4, row=6, sticky=E)
+#Print all the receipt details
+def print_receipt_details():
+    #Create the column headings
+    Label(main_window, font=("Helvetica 13 "), text="Row").grid(column=0, row=7) 
+    Label(main_window, font=("Helvetica 13 "), text="Customer Full Name").grid(column=1, row=7)
+    Label(main_window, font=("Helvetica 13 "), text="Receipt Number").grid(column=2, row=7)
+    Label(main_window, font=("Helvetica 13 "), text="Item(s) Hired").grid(column=3, row=7)
+    Label(main_window, font=("Helvetica 13 "), text="Number of Items Hired").grid(column=4, row=7)
+#Check the inputs are all valid and not blank
+def check_inputs():
+    input_check = 0
+    Label(main_window, text="               ") .grid(column=2, row=0)
+    Label(main_window, text="               ") .grid(column=2, row=1)
+    Label(main_window, text="               ") .grid(column=2, row=2)
+    Label(main_window, text="               ") .grid(column=2, row=3)
+#Quits the program when button quit is pressed
+def quit():
+    main_window.destroy()
+#Delete a row from the list
+def delete_row():
+#Print all the infomation
+    print_receipt_details()
+#Start the program 
+def main():
+    #The global variables that are used
+    global main_window
+    #Create the gui and start it
+    main_window = Tk()    
+    #Title for the main window
+    main_window.title("Julie's Party Hire")
+    setup_buttons()
+    main_window.mainloop()
+main()
